@@ -1,0 +1,378 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap");
+/*$Mukta: 'Mukta', Courier, monospace;
+$Inter: 'Inter', Courier, monospace;*/
+html {
+  /*scrollbar-width: none;*/
+  position: relative;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 0px !important;
+}
+
+.footer {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  background-color: white;
+  border-top-style: solid;
+  border-top-color: #2c2e2e !important;
+  border-top-width: 2px !important;
+  z-index: 12;
+}
+
+.navbar {
+  background-color: white;
+  height: 5rem;
+  border-bottom-color: #2c2e2e !important;
+  border-bottom-width: 2px !important;
+}
+
+.frame {
+  /*position: relative;*/
+  padding: 0px !important;
+  width: 100vw;
+  min-height: calc(100vh - 9rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: #bbf3fc;
+}
+.frame .left {
+  padding: 5%;
+  width: 45%;
+}
+.frame .right {
+  padding: 5%;
+  width: 55%;
+}
+.frame .right .card {
+  margin: 1rem;
+}
+
+.card {
+  border-color: #2c2e2e !important;
+  border-width: 2px !important;
+  background-color: #ffcccc;
+}
+
+.card-body p {
+  padding: 1.5rem;
+}
+
+.shadow {
+  box-shadow: 10px 10px #2c2e2e !important;
+}
+
+.dot {
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.luckybtn {
+  transition: box-shadow 0.4s ease, transform 0.2s ease;
+  color: #2c2e2e;
+  padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+}
+.luckybtn:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px #2c2e2e;
+}
+.luckybtn:active {
+  transform: scale(0.8, 0.8);
+  transition: transform 100ms;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  margin-bottom: 0.5rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+}
+.form-group .form-text {
+  padding: 0.5rem 0.8rem 0 0.8rem;
+}
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.flashes {
+  margin: 0 !important;
+}
+.flashes .btn-close {
+  margin-right: 2rem;
+  /*width: 1.6rem;
+  height: 1.6rem;
+  border-color: $black;
+  border-radius: 10rem;*/
+}
+
+/* width 
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+#scrollbarBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 4rem;
+    z-index: 10;
+    background: white;
+    border-left-style: solid;
+    border-left-color: $black;
+    border-left-width: 2px;
+}
+#scrollbarHandle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 50%;
+    bottom: 70%;
+    border-left: 2px solid $black;
+
+}
+
+.arrow {
+    left: 50%;
+    position: absolute;
+    border: solid $black;
+    border-width: 0 2px 3px 0;
+    display: inline-block;
+    padding: 8px;
+}
+.up {
+    top: 5rem;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform-origin: center center;
+}
+
+.down {
+    bottom: 4rem;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform-origin: right center;
+} */
+* {
+  font-family: "Space Grotesk", Courier, monospace;
+}
+
+a:link {
+  color: #2c2e2e;
+}
+a:hover {
+  color: #6400e4;
+  font-weight: 500;
+}
+a:visited {
+  color: #cccccc;
+}
+
+html {
+  /*scrollbar-width: none;*/
+  position: relative;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 0px !important;
+}
+
+.footer {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  background-color: white;
+  border-top-style: solid;
+  border-top-color: #2c2e2e !important;
+  border-top-width: 2px !important;
+  z-index: 12;
+}
+
+.navbar {
+  background-color: white;
+  height: 5rem;
+  border-bottom-color: #2c2e2e !important;
+  border-bottom-width: 2px !important;
+}
+
+.frame {
+  /*position: relative;*/
+  padding: 0px !important;
+  width: 100vw;
+  min-height: calc(100vh - 9rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: #bbf3fc;
+}
+.frame .left {
+  padding: 5%;
+  width: 45%;
+}
+.frame .right {
+  padding: 5%;
+  width: 55%;
+}
+.frame .right .card {
+  margin: 1rem;
+}
+
+.card {
+  border-color: #2c2e2e !important;
+  border-width: 2px !important;
+  background-color: #ffcccc;
+}
+
+.card-body p {
+  padding: 1.5rem;
+}
+
+.shadow {
+  box-shadow: 10px 10px #2c2e2e !important;
+}
+
+.dot {
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.luckybtn {
+  transition: box-shadow 0.4s ease, transform 0.2s ease;
+  color: #2c2e2e;
+  padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+}
+.luckybtn:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px #2c2e2e;
+}
+.luckybtn:active {
+  transform: scale(0.8, 0.8);
+  transition: transform 100ms;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  margin-bottom: 0.5rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+}
+.form-group .form-text {
+  padding: 0.5rem 0.8rem 0 0.8rem;
+}
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.flashes {
+  margin: 0 !important;
+}
+.flashes .btn-close {
+  margin-right: 2rem;
+  /*width: 1.6rem;
+  height: 1.6rem;
+  border-color: $black;
+  border-radius: 10rem;*/
+}
+
+/* width 
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+#scrollbarBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 4rem;
+    z-index: 10;
+    background: white;
+    border-left-style: solid;
+    border-left-color: $black;
+    border-left-width: 2px;
+}
+#scrollbarHandle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 50%;
+    bottom: 70%;
+    border-left: 2px solid $black;
+
+}
+
+.arrow {
+    left: 50%;
+    position: absolute;
+    border: solid $black;
+    border-width: 0 2px 3px 0;
+    display: inline-block;
+    padding: 8px;
+}
+.up {
+    top: 5rem;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform-origin: center center;
+}
+
+.down {
+    bottom: 4rem;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform-origin: right center;
+} */
+
+/*# sourceMappingURL=main.css.map */

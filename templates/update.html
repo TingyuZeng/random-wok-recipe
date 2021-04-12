@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Random Wok Recipe - Login
+{% endblock %}
+
+{% block body %}
+
+    <div class="frame d-flex flex-column align-items-center">
+        
+        {% from "_formhelper.html" import render_field %}
+        <form action='/ingredients/update/{{ ingredient.id }}' class="align-middle d-flex flex-column mt-5" method='post'>
+            {{ form.csrf_token }}
+            <dl class="form-group">
+                {{ render_field(form.ingredient, placeholder=ingredient.name) }}
+                {{ render_field(form.type) }}
+            </dl>
+            <div class="form-group mt-4 d-flex justify-content-stretch align-self-start">
+                <button type="submit" class="btn luckybtn card">update</button>
+            </div>
+        </form>
+
+        {% if form.errors %}
+            {{ form.errors }}
+        {% endif %}
+        
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,15 @@
+name,carbohydrate,protein,herb,side,sauce
+rice,TRUE,,,,
+potato,TRUE,,,TRUE,
+noodle,TRUE,,,,
+beef,,TRUE,,,
+pork,,TRUE,,,
+chicken,,TRUE,,,
+tofu,,TRUE,,TRUE,
+garlic,,,TRUE,,
+onion,,,TRUE,TRUE,
+champignon,,,,TRUE,
+bell pepper,,,,TRUE,
+cucumber,,,,TRUE,
+soy sauce,,,,,TRUE
+apple sauce,,,,,TRUE

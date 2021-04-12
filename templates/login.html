@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Random Wok Recipe - Login
+{% endblock %}
+
+{% block body %}
+
+    <div class="frame d-flex flex-column align-items-center">
+        
+        {% from "_formhelper.html" import render_field %}
+        <form class='align-middle d-flex flex-column mt-5' action="/login" method="post">
+            {{ form.csrf_token }}
+            <dl class="form-group">
+                {{ render_field(form.username) }}
+                {{ render_field(form.password) }}
+            </dl>
+            <div class="form-group mt-4 d-flex justify-content-stretch align-self-start">
+                <button type="submit" class="btn luckybtn card">Login</button>
+            </div>
+        </form>
+
+    </div>
+    
+{% endblock %}

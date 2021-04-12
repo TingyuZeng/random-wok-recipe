@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Random Wok Recipe
+{% endblock %}
+
+{% block body %}
+    <div class="frame align-middle">
+        
+        <div class="container left">
+            <div>
+                <h1 class="mt-5 fw-bold text-uppercase">What to cook tonight?</h1>
+                <p class="fs-3">Try a random wok recipe!</p>
+            </div>
+
+            <div class="mb-3 d-flex align-self-end">
+                <form onsubmit='return false' method="post">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <button class="luckybtn mt-3 card btn btn-outline-secondary" type="submit" id="lucky">Feeling Lucky</button>
+                </form>
+            </div>
+
+            <div id="recipe" class="mt-2" style="display: none;">
+                <ol>
+                    <li id="carbohydrate"></li>
+                    <li id="herb"></li>
+                    <li id="protein"></li>
+                    <li id="side"></li>
+                    <li id="sauce"></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class='container right d-flex flex-column cards justify-content-start mt-5'>
+            
+            <div class="d-flex flex-row flex-wrap align-content-start">
+                
+                {% for i in range(5) %}
+                
+                <div class="card border-primary mb-3 shadow" style="max-width: 20rem;">
+                    <div class="card-header">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title ingredient-name">ingredient {{ i + 1 }} </p>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block script %}
+    <script>
+        // When sending an AJAX request, add the X-CSRFToken header to it. 
+        // https://flask-wtf.readthedocs.io/en/stable/csrf.html
+        let csrf_token = "{{ csrf_token() }}";
+
+        // Passing data between server and browser
+        function getARecipe(inquiry) {
+    
+            fetch(`${window.origin}/get-a-recipe`, {
+                method: "POST",
+                credentials: "include",
+                body: JSON.stringify(inquiry),
+                cache: "no-cache",
+                headers: new Headers ({
+                    "content-type": "application/json",
+                    "X-CSRFToken": "{{ csrf_token() }}"
+                })
+            })
+            .then(function(response) {
+        
+                if(response.status !== 200) {
+                    console.log(`Response status was not 200: ${response.status}`);
+                    return;
+                }
+        
+                response.json().then(function(data) {
+                    console.log(data);
+                    updateCards(data);
+                    showRecipe(data);
+                })
+            })
+            .catch(function (error) {
+                console.log("Fetch error: " + error);
+            });
+        }
+    </script>    
+    <script>
+        
+        // Lucky button
+        const lucky = document.getElementById("lucky");
+
+        // Lucky button's method
+        lucky.onclick = magicSpin;
+
+    </script>
+    
+{% endblock %}

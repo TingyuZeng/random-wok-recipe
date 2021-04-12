@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Random Wok Recipe - Admin
+{% endblock %}
+
+{% block body %}
+
+    <div class="frame d-flex flex-row">
+        
+        <div class="left container d-flex flex-column">
+
+            <h1>Hello, {{ session['username'] }}</h1>
+            
+            <div class="mt5 w-50 d-flex flex-column">
+                <p class="fs-5 fw-bold mt-5">Add a new ingredient</p>
+
+                 <!--Form to add an ingredient-->
+                {% from "_formhelper.html" import render_field %}
+                <form action='/ingredients' method='post'>
+                    {{ form.csrf_token }}
+                    <dl class="form-group">
+                        {{ render_field(form.ingredient) }}
+                        {{ render_field(form.type) }}
+                    </dl>
+                    <div class="form-group mt-4 d-flex justify-content-stretch align-self-start">
+                        <button type="submit" class="btn luckybtn card">add</button>
+                    </div>
+                </form>
+                {% if form.errors %}
+                    {{ form.errors }}
+                {% endif %}
+            </div>
+           
+        </div>
+
+        <div class="right container">
+            <table class="table table-hover">
+                <caption>ingredient list</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Ingredient</th>
+                        <th scope="col">Type</th>
+                        <th scope="col" class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ingredient in ingredients %}
+                    <tr>
+                        <th scope="row" id="{{ ingredient.id }}">{{ ingredient.id }}</th>
+                        <td>{{ ingredient.name }}</td>
+                        <td>{{ ingredient.type.type }}</td>
+                        <td class="d-flex flex-row justify-content-evenly">
+                            <a href="/ingredients/update/{{ ingredient.id }}">Update</a>
+                            <a href="/ingredients/delete/{{ ingredient.id }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+        
+    
+{% endblock %}

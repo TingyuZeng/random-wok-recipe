@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Random Wok Recipe - Error
+{% endblock %}
+
+{% block body %}
+    <div class="frame d-flex flex-column align-items-center text-center justify-content-center">
+        
+        <h1 class="mt-2 text-uppercase fw-bold">{{ error_code }}: {{ error_name }}</h1>
+
+        <div class="w-30 mt-3">
+            <img src="/static/img/error.png" class="img-fluid" alt="Error illustrator">
+        </div>
+        
+        <h2 class="mt-4">Don't Panic!</h2>
+        <h2>We are trying to reconnect you! Hold on for a sec!</h2>
+        <a class="luckybtn mt-2 card btn btn-outline-secondary" href="/">home</a>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        setTimeout(() => {
+            window.location.replace("/");
+        }, 5000);
+    </script>
+{% endblock %}

@@ -1,0 +1,30 @@
+// Import Google font
+/*@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+// Font variable
+/*$Mukta: 'Mukta', Courier, monospace;
+$Inter: 'Inter', Courier, monospace;*/
+$SG: 'Space Grotesk', Courier, monospace;
+
+@import 'layout';
+
+* {
+    font-family: $SG;
+}
+
+a {
+    &:link {
+        color: $black;
+    }
+
+    &:hover {
+        color: $purple;
+        font-weight: 500;
+    }
+
+    &:visited {
+        color: $grey;
+    }
+}

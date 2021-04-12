@@ -1,0 +1,15 @@
+type,style,instruction
+carbohydrate,boil,"Add the ::carbohydrate:: to the boiled water of approriate amount, leave it on low heat and cook till it is ready."
+carbohydrate,steam,"Place the ::carbohydrate:: on a steamer and bring water to boil, check every 10 minutes till it is tender."
+protein,boil,"Prepare the ::protein:: into small pieces, dip it into boiled water or flavoured water with salt and pepper, till it is cooked."
+protein,fry,"Prepare the ::protein:: into thin pieces, turn on the high heat and add it to the pan, stir till it is cooked."
+protein,steam,"Prepare the ::protein:: into small pieces, place it on a steamer and bring water to boil, leave it on a low heat till it is cooked."
+side,boil,Slice the ::side:: and cook it with boiled water.
+side,steam,Slice the ::side:: and leave it on a steamer till it is ready.
+side,fry,Slice the ::side:: and fry it on a pan.
+herb,boil,"Prepare the ::herb::, and season the ::protein:: with it."
+herb,fry,"Prepare the ::herb::, and fry it on a pan with low heat till you can smell it."
+herb,steam,"Prepare the ::herb::, and season the ::protein:: with it."
+sauce,boil,Pour the ::sauce:: on the cooked dish on a plate
+sauce,steam,Pour the ::sauce:: on the cooked dish on a plate
+sauce,fry,"Before putting the dish on a plate, add ::sauce:: to the pan and stir."
