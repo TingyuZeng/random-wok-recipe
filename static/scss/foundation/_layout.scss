@@ -6,7 +6,7 @@ $black: #2c2e2e;
 $purple: #6400e4;
 
 html {
-    /*scrollbar-width: none;*/
+    //scrollbar-width: none;
     position: relative;
     min-height: 100%;
     font-size: 16px;
@@ -14,6 +14,7 @@ html {
 
 body {
     //overflow: scroll;
+    overflow-x:hidden;
     position: relative;
     top: 5rem;
     display: flex;
@@ -47,7 +48,7 @@ main {
 }
 
 .frame {
-    /*position: relative;*/
+    //position: relative;
     padding: 0px !important;
     width: 100vw;
     min-height: calc(100vh - 9rem);
@@ -158,54 +159,3 @@ main {
 }
 
 
-
-// Scrollbar customization 
-/* width 
-::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-}
-
-#scrollbarBox {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 4rem;
-    z-index: 10;
-    background: white;
-    border-left-style: solid;
-    border-left-color: $black;
-    border-left-width: 2px;
-}
-#scrollbarHandle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 50%;
-    bottom: 70%;
-    border-left: 2px solid $black;
-    
-}
-
-.arrow {
-    left: 50%;
-    position: absolute;
-    border: solid $black;
-    border-width: 0 2px 3px 0;
-    display: inline-block;
-    padding: 8px;
-}
-.up {
-    top: 5rem;
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    transform-origin: center center;
-}
-  
-.down {
-    bottom: 4rem;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform-origin: right center;
-} */

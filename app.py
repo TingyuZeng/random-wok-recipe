@@ -139,10 +139,10 @@ def login():
                 session["user_id"] = admin.id
                 session["username"] = admin.username
                 return redirect(url_for('ingredients'))
-            
-            else:
-                flash('Access denied', category='warning')
-                return redirect(url_for('login'))
+
+        flash("Access denied", "warning")
+        
+        return redirect(url_for('login'))
     
     else:
         return render_template('login.html', form=form)
@@ -175,7 +175,7 @@ class IngredientForm(FlaskForm):
 class AdminLoginForm(FlaskForm):
     username = StringField('Username', \
                             validators=[DataRequired(message="Username required")], \
-                            render_kw={"placeholder": "Enter username"}
+                            render_kw={"placeholder": "Enter username", "autocomplete": "off"}
     )
     password = PasswordField('Password', \
                             validators=[DataRequired(message="Password required")], \
