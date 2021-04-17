@@ -2,3 +2,6 @@ legacy/
 
 .DS_Store
 _scrollbar.scss
+
+__pycache__
+venv
